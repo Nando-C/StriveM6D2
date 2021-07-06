@@ -1,6 +1,7 @@
 import express from 'express'
 import listEndpoints from 'express-list-endpoints'
 import cors from 'cors'
+import mongoose from 'mongoose'
 
 const port = process.env.PORT || 3001
 
@@ -11,9 +12,14 @@ server.use(cors())
 server.use(express.json())
 // ===================== ROUTES  =================================
 // ===================== ERROR HANDLERS ==========================
+// ===============================================================
 
 console.table(listEndpoints(server))
 
-server.listen(port, () => {
-    console.log(" ✅  Server is running on port: " + port);
-})
+mongoose.connect(process.env.MONGO_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+.then(() => 
+    server.listen(port, () => {
+        console.log(" ✅  Server is running on port: " + port);
+    })
+)
+.catch(err => console.log(err))
