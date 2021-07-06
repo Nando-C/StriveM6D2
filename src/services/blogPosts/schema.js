@@ -4,35 +4,35 @@ const { Schema, model } = mongoose
 
 const PostSchema = new Schema(
     {
-	    category: {
+        category: {
             type: String,
             required: true,
         },
-	    title: {
+        title: {
             type: String,
             required: true,
         },
-	    cover: {
+        cover: {
             type: String,
         },
-	    readTime: {
-	      value: {
-            type: Number,
+        readTime: {
+            value: {
+                type: Number,
             },
-	      unit: {
-            type: String,
+            unit: {
+                type: String,
             },
-	    },
-	    author: {
-	      name: {
-            type: String,
-            required: true,
+        },
+        author: {
+            name: {
+                type: String,
+                required: true,
             },
-	      avatar:{
-            type: String,
+            avatar: {
+                type: String,
             },
-	    },
-	    content: {
+        },
+        content: {
             type: String,
             required: true,
         },

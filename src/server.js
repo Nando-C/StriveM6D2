@@ -2,8 +2,8 @@ import express from 'express'
 import listEndpoints from 'express-list-endpoints'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import { badRequestMiddleware, catchAllErrorsMiddleware, notFoundMiddleware } from './errorMiddlewares'
-import blogPostsRouter from './services/blogPosts'
+import { badRequestMiddleware, catchAllErrorsMiddleware, notFoundMiddleware } from './errorMiddlewares.js'
+import blogPostsRouter from './services/blogPosts/index.js'
 
 const port = process.env.PORT || 3001
 
